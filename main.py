@@ -19,6 +19,10 @@ author_email = config["WP_SETTINGS"]["author_email"]
 def format_string_for_video_link(input_string):
     # Replace consecutive spaces with a single hyphen and convert to lowercase
     formatted_string = re.sub(r'(?<=\S)\s+(?=\S)', '-', input_string.lower())
+
+    # Replace '&' with '-'
+    formatted_string = formatted_string.replace('&', '-')
+
     return formatted_string
 
 
